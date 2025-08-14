@@ -1,0 +1,9 @@
+use primera_base;
+go
+create table NuevaTabla1(
+	ID int primary key
+	identity(1,1),
+	columna1 Varchar(50),
+	columna2 int
+	);
+	GO
