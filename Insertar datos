@@ -1,0 +1,4 @@
+INSERT INTO Proveedores (Nombre, Contacto, Telefono, Email, Direccion)
+VALUES ('MyM Repuestos y Servicios', 'Fredy Yanque', '548976321',
+'mymrepuestosyservicios@gmail.com', 'Calle Principal 123');
+ select * from Proveedores
