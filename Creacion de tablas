@@ -1,0 +1,28 @@
+-- Tabla1: Proveedores
+CREATE TABLE ProveedoresRep (
+    ProveedorID INT PRIMARY KEY IDENTITY(1,1),
+    Nombre VARCHAR(255) NOT NULL,
+    Contacto VARCHAR(255),
+    Telefono VARCHAR(20),
+    Email VARCHAR(255),
+    Direccion VARCHAR(255)
+);
+
+-- Tabla2: Repuestos
+CREATE TABLE RepuestosVol (
+    RepuestoID INT PRIMARY KEY IDENTITY(1,1),
+    Descripcion VARCHAR(255) NOT NULL,
+    Precio DECIMAL(10, 2),
+    Marca VARCHAR(255),
+    ProveedorID INT NOT NULL,
+    FechaIngreso DATE DEFAULT GETDATE(),
+    FOREIGN KEY (ProveedorID) REFERENCES ProveedoresRep(ProveedorID)
+);
+
+-- Tabla3: Inventario
+CREATE TABLE Inventario (
+    InventarioID INT PRIMARY KEY IDENTITY(1,1),
+    RepuestoID INT NOT NULL,
+    Cantidad INT DEFAULT 0,
+    FOREIGN KEY (RepuestoID) REFERENCES RepuestosVol(RepuestoID)
+);
